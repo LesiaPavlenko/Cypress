@@ -43,3 +43,26 @@ Cypress.Commands.add("openApp", () => {
     },
   });
 });
+
+// Open QAuto app using env config
+Cypress.Commands.add("qautoOpenApp", () => {
+  cy.visit(Cypress.env("baseUrl"), {
+    auth: {
+      username: Cypress.env("basicAuthUser"),
+      password: Cypress.env("basicAuthPassword"),
+    },
+  });
+});
+
+// Login using users from env config
+Cypress.Commands.add("qautoLogin", () => {
+  cy.qautoOpenApp();
+
+  cy.contains("button", "Sign In").click();
+
+  cy.get("#signinEmail").type(Cypress.env("userEmail"));
+  cy.get("#signinPassword").type(Cypress.env("userPassword"), { sensitive: true });
+
+  cy.contains("button", "Login").click();
+  cy.url().should("include", "/panel");
+});
