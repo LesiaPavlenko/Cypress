@@ -1,1 +1,8 @@
 cypress.env.json
+node_modules/
+cypress/reports/
+mochawesome-report/
+cypress/videos/
+cypress/screenshots/
+npm-debug.log*
+yarn-debug.log*
