@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-27T12:36:27.135Z",
+    "end": "2026-01-27T12:36:29.223Z",
+    "duration": 2088,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "de715a70-cd64-4008-a4be-8c4b7f0c4c3b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\homeworks\\homework19.cy.js",
+      "file": "cypress\\e2e\\homeworks\\homework19.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "781a65fd-c086-4597-925b-936a730bdf9f",
+          "title": "QAuto landing page tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should open Sign up modal and display all registration fields",
+              "fullTitle": "QAuto landing page tests should open Sign up modal and display all registration fields",
+              "timedOut": null,
+              "duration": 959,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Open registration modal\ncy.contains('Sign up').should('be.visible').click();\n// Waiting until modal becomes visible (after animation)\ncy.get('ngb-modal-window').should('be.visible').within(() => {\n  cy.contains('Registration').should('be.visible');\n  cy.get('input[name=\"name\"]').should('be.visible');\n  cy.get('input[name=\"lastName\"]').should('be.visible');\n  cy.get('input[name=\"email\"]').should('be.visible');\n  cy.get('input[name=\"password\"]').should('be.visible');\n  cy.get('input[name=\"repeatPassword\"]').should('be.visible');\n  cy.contains('Register').should('be.visible');\n});",
+              "err": {},
+              "uuid": "e0a6d950-da3e-4d5b-ab6b-68fc1490bff0",
+              "parentUUID": "781a65fd-c086-4597-925b-936a730bdf9f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display all footer contact links",
+              "fullTitle": "QAuto landing page tests should display all footer contact links",
+              "timedOut": null,
+              "duration": 462,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Social media links\ncy.get('.contacts_socials').should('be.visible').within(() => {\n  cy.get('a.socials_link').should('have.length', 5); // Verify there are 5 social media links\n  // Verify each social media link\n  cy.get('a.socials_link[href*=\"facebook\"]').should('exist');\n  cy.get('a.socials_link[href*=\"t.me\"]').should('exist');\n  cy.get('a.socials_link[href*=\"youtube\"]').should('exist');\n  cy.get('a.socials_link[href*=\"instagram\"]').should('exist');\n  cy.get('a.socials_link[href*=\"linkedin\"]').should('exist');\n});\n// Website link\ncy.get('a.contacts_link').contains('ithillel.ua').should('be.visible').and('have.attr', 'href', 'https://ithillel.ua').and('have.attr', 'target', '_blank');\n// Email link\ncy.get('a.contacts_link').contains('support@ithillel.ua').should('be.visible').and('have.attr', 'href').and('include', 'mailto:');",
+              "err": {},
+              "uuid": "6b4e8231-e82a-4ebe-a72b-ead5c909dcba",
+              "parentUUID": "781a65fd-c086-4597-925b-936a730bdf9f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e0a6d950-da3e-4d5b-ab6b-68fc1490bff0",
+            "6b4e8231-e82a-4ebe-a72b-ead5c909dcba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1421,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

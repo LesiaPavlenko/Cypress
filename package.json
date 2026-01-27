@@ -1,5 +1,12 @@
 {
   "devDependencies": {
-    "cypress": "^15.8.2"
-  }
+    "cypress": "^15.8.2",
+    "mochawesome": "^7.1.4"
+  },
+"scripts": {
+  "cy:open:qautoPositive": "cypress open --env config=qautoPositive",
+  "cy:open:qautoBug": "cypress open --env config=qautoBug",
+  "cy:run:qautoPositive": "cypress run --env config=qautoPositive",
+  "cy:run:qautoBug": "cypress run --env config=qautoBug"
+}
 }

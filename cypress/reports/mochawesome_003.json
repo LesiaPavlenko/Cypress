@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-27T12:35:44.347Z",
+    "end": "2026-01-27T12:35:49.926Z",
+    "duration": 5579,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0766fe4f-157f-4086-ae14-0b052263e4b7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\garage-expenses.cy.js",
+      "file": "cypress\\e2e\\garage-expenses.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32578c7b-3d48-4553-91f7-a52117511fd5",
+          "title": "QAuto: add car and fuel expense",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can add Porsche Cayenne and add fuel expense",
+              "fullTitle": "QAuto: add car and fuel expense User can add Porsche Cayenne and add fuel expense",
+              "timedOut": null,
+              "duration": 5548,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const carName = \"Porsche Cayenne\";\n// ----- ADD CAR -----\n_GaragePage.default.addCar(\"Porsche\", \"Cayenne\", \"10000\");\ncy.contains(carName).should(\"be.visible\");\n// ----- ADD EXPENSE -----\n_ExpensesPage.default.addExpense(carName, \"10100\", \"20\", \"800\");\n// verify expense appears\ncy.contains(\"800\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "de0fbd24-c430-4e56-9d8b-c5e6a3afb866",
+              "parentUUID": "32578c7b-3d48-4553-91f7-a52117511fd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "de0fbd24-c430-4e56-9d8b-c5e6a3afb866"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5548,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
