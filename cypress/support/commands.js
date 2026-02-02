@@ -66,3 +66,29 @@ Cypress.Commands.add("qautoLogin", () => {
   cy.contains("button", "Login").click();
   cy.url().should("include", "/panel");
 });
+
+// API command to create a car expense
+Cypress.Commands.add(
+  "createExpenseApi",
+  (carId, mileage, liters, totalCost) => {
+    return cy.request({
+      method: "POST",
+      url: "/api/expenses",
+
+      auth: {
+        username: "guest",
+        password: "welcome2qauto"
+      },
+
+      body: {
+        carId,
+        mileage,
+        liters,
+        totalCost,
+        reportedAt: Date.now()
+      }
+    });
+  });
+
+
+
